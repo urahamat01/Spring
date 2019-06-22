@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ot" class="com.example.demo.OtherBean">
+        <property name="id" value="50000"/>
+        <property name="depName" value="SoftWare"/>
+
+
+    </bean>
+    <bean id="ot2" class="com.example.demo.OtherBean">
+        <property name="id" value="50000"/>
+    </bean>
+    <bean id="simpleBean1" class="com.example.demo.SimpleBean" init-method="init">
+    <property name="name">
+        <value>Rahamat Ullah</value>
+    </property>
+        <property name="age">
+            <value>100</value>
+        </property>
+        <property name="otherBean" ref="ot"/>
+    </bean>
+    <bean id="simpleBean2" class="com.example.demo.SimpleBean" init-method="init">
+        <property name="age">
+            <value>50</value>
+        </property>
+        <property name="otherBean" ref="ot2"/>
+    </bean>
+
+
+</beans>
