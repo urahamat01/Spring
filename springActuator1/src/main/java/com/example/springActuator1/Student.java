@@ -1,17 +1,31 @@
 package com.example.springActuator1;
 
+import jdk.Exported;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.*;
+
+@Entity
+@Table(name = "stu")
 public class Student {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
 
-    public int getId() {
+    public Student() {
+    }
+
+    public Student(String toString) {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
