@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Home Page</title>
+
+</head>
+<body>
+
+<div layout:fragment="cus-content">
+    <h2 th:text="${success}"></h2>
+    
+    <div class="row">
+        <div class="col col-md-3">
+            <label for="name"> Name </label>
+
+        </div>
+        <div class="col col-md-9">
+            <input class="form-control" type="text" th:fiald="(userName)" id="userName"/>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-3">
+            <label for="name"> UserName </label>
+
+        </div>
+        <div class="col col-md-9">
+            <input class="form-control" type="text" th:fiald="(userName)" id="userName"/>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-3">
+            <label for="name"> Password </label>
+
+        </div>
+        <div class="col col-md-9">
+            <input class="form-control" type="text" th:fiald="(userName)" id="userName"/>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-3">
+            <label for="name"> Hobby </label>
+
+        </div>
+        <div class="col col-md-9">
+            <input class="form-control" type="text" th:fiald="(userName)" id="userName"/>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-3">
+            <label for="name"> Gender </label>
+
+        </div>
+        <div class="col col-md-9">
+            <input class="form-control" type="text" th:fiald="(userName)" id="userName"/>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-md-3">
+            <label for="name"> Country </label>
+
+        </div>
+        <div class="col col-md-9">
+           <select th:field="*{country}">
+               <option th:value="">Select A Country</option>
+               <option th:value="Bd">Bangladesh</option>
+               <option th:value="in">Indea</option>
+               <option th:value="np">Nepel</option>
+               <option th:value="us">USA</option>
+               <option th:value="jp">Japan</option>
+
+           </select>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="offset-sm-3 offset-md-7 offset-lg-7">
+            <label for="name"> Country </label>
+
+        </div>
+        <div class="col col-md-9">
+            <select th:field="*{country}">
+                <option th:value="">Select A Country</option>
+                <option th:value="Bd">Bangladesh</option>
+                <option th:value="in">Indea</option>
+                <option th:value="np">Nepel</option>
+                <option th:value="us">USA</option>
+                <option th:value="jp">Japan</option>
+
+            </select>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
