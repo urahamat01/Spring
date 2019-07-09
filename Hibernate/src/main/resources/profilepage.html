@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thmeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Student List By Departement </h1>
+
+<from>
+    <select th:each="${}">
+        <option th:each="${slist}" th:value="${s.id}">
+            <span th:text="{}s.name"></span>
+        </option>
+
+    </select>
+    <button type="submit">Check</button>
+
+
+</from>
+<h1>Welcome Name Mr.<span th:text="${student.name}"></span></h1>
+<table style="width: 100%">
+
+    <tr>
+
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Student Email</th>
+        <th>Department Name</th>
+    </tr>
+
+
+    <tr>
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.department.name}"></td>
+
+
+    </tr>
+</table>
+
+</body>
+</html>

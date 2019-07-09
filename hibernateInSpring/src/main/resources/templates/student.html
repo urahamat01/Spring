@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add Student</h1>
+<span style="color:red;" th:text="${errMsg}"></span>
+<span style="color:green;" th:text="${successMsg}"></span>
+<form th:object="${student}" th:action="@{/student}", th:method="POST">
+    <label>Name :</label>
+    <input type="text" th:field="*{name}" ><br/>
+    <label>Email :</label>
+    <input type="email" th:field="*{email}" ><br/>
+    <label>Age :</label>
+    <input type="number" th:field="*{age}" ><br/>
+    <label>Gender :</label>
+    <input type="radio" th:field="*{gender}" th:value="m" >Male
+    <input type="radio" th:field="*{gender}" th:value="f" >Female<br/>
+    <label>Photo :</label>
+    <input type="file" name="file" /><br/><br/>
+    <label>Comment</label>
+    <textarea rows="8" cols="7"></textarea><br/><br/>
+    <select th:field="*{department}" >
+        <option th:each="dep : ${deplist}" th:value="${dep.id}"><span th:text="${dep.name}"></span></option>
+    </select><br/><br/>
+    <button type="submit">Save</button>
+</form>
+
+<hr/>
+<h1>Department List</h1>
+<table style="width: 100%">
+    <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Student Email</th>
+        <th>Department Name</th>
+        <th>Image</th>
+    </tr>
+    <tr th:each="s : ${list}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.name}"></td>
+        <td th:text="${s.email}"></td>
+        <td th:text="${s.department.name}"></td>
+
+        <td><img  th:src="@{${s.getFilePath()}}" width="100" height="100"/></td>
+
+
+    </tr>
+</table>
+
+</body>
+</html>

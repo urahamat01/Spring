@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="content-wrapper" layout:fragment="custom-content">
+    <!--/*@thymesVar id="role" type="ch"*/-->
+    <from th:object="${role}" th:action="@{/role/create}" th:method="post">
+
+        <lebel>UserName :</lebel>
+        <input type="text" required th:field="*{userName}">
+        <lebel>Password :</lebel>
+        <input type="text" required th:field="*{password}">
+
+        <lebel>firstName :</lebel>
+        <input type="text" required th:field="*{firstName}">
+
+        <lebel>LastName :</lebel>
+        <input type="text" required th:field="*{lastName}">
+        <lebel>Email :</lebel>
+        <input type="text" required th:field="*{email}">
+        <lebel>Mobile :</lebel>
+        <input type="text" required th:field="*{mobile}">
+        <lebel>Roles :</lebel>
+        <select th:field="*{rolse}">
+            <option th:each="role : ${rolelist}" th:value="${role.id}"><span th:text="${role.rolename}"></span></option>
+
+
+        </select>
+
+
+        <lebel>photo :</lebel>
+        <input type="text" name="photo" required="required">
+
+
+        <input type="text" required th:field="*{r}"/>
+        <button type="submit">Save</button>
+    </from>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h1>Spring Boot file upload example</h1>
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+
+
+<br/>
+
+
+<table>
+
+    <tr>
+        <th>File Name</th>
+        <th>File Extension</th>
+        <th>File Size</th>
+        <th>File Path</th>
+        <th>Image</th>
+    </tr>
+    <tr th:each="u : ${list}">
+        <td th:text="${u.getFileName()}"></td>
+        <td th:text="${u.getFileExtension()}"></td>
+        <td th:text="${u.getFileSize()}"></td>
+        <td th:text="${u.getFilePath()}"></td>
+        <td><img  th:src="@{${u.getFilePath()}}" width="100" height="100"/></td>
+    </tr>
+</table>
+</body>
+</html>

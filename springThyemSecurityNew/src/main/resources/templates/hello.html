@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>hello would please LogOut</h1>
+
+<h1><a th:href="@{/logout}">Logout</a></h1>
+
+<table id="example" class="table table-stariped table-bordered" style="width: 100%">
+
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr th:each="student : ${list}">
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.age}"></td>
+
+    </tr>
+    </tbody>
+
+
+</table>
+
+</body>
+</html>

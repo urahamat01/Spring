@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thmeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Add Departement</h1>
+<span style="..." th:text="${errMsg}"></span>
+<span style="..." th:text="{successMsg}"></span>
+<form th:object="${department}" th:action="@{/}" th:method="POST">
+    <input type="text" th:field="{name}"/>
+    <input type="email" th:field="{email}">
+    <select th:field="*{department}">
+
+
+    </select>
+    <lebel>
+        <input type="radio" value="mail" name="gender" th:field="{address}">
+        <input type="radio" value="femail" name="gender" th:field="{gender}">
+
+    </lebel>
+    <button type="submit">Save</button>
+
+
+</form>
+
+<hr/>
+<h1>Department List</h1>
+<table style="width:100%">
+
+    <tr>
+
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Student Email</th>
+        <th>Department Name</th>
+        <th>Address</th>
+    </tr>
+
+
+    <tr th:each="s : ${list}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.name}"></td>
+        <td th:text="${s.email}"></td>
+        <td th:text="${s.department.name}"></td>
+        <th th:text="${s.address}"></th>
+        <th th:text="${s.gender}"></th>
+
+
+    </tr>
+</table>
+
+</body>
+</html>
